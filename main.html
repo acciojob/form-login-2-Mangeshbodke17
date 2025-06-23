@@ -1,40 +1,38 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+	<title>Form Alert</title>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
 
+<form id="userForm">
+	<label for="firstName">First Name:</label>
+	<input type="text" name="First Name" id="firstName" placeholder="First Name" required><br><br>
 
-<form>
+	<label for="lastName">Last Name:</label>
+	<input type="text" name="Last Name" id="lastName" placeholder="Last Name" required><br><br>
 
-	<label for="First Name"></label>
-	<input type="username" placeholder="First Name" id="First Name">
+	<label for="phoneNumber">Phone Number:</label>
+	<input type="number" name="Phone Number" id="phoneNumber" placeholder="Phone Number" required><br><br>
 
-	<label for="Last Name"></label>
-	<input type="username" placeholder="Last Name" id="Last Name">
+	<label for="emailId">Email ID:</label>
+	<input type="email" name="Email ID" id="emailId" placeholder="Email ID" required><br><br>
 
-
-	<label for="Phone Number"></label>
-	<input type="number" placeholder="Number" id="Phone Number">
-
-	<label for="Email ID"></label>
-	<input type="email" placeholder="email" id="Email ID">
-
-
-	<button>
-		submit
-	</button>
-	
-
+	<button type="submit">Submit</button>
 </form>
-    <script type="text/javascript" src="./script.js">
+
+<script>
+document.querySelector("#userForm").addEventListener("submit", function(event) {
+	event.preventDefault();
+
+	let firstName = document.querySelector("#firstName").value;
+	let lastName = document.querySelector("#lastName").value;
+	let phoneNumber = document.querySelector("#phoneNumber").value;
+	let emailId = document.querySelector("#emailId").value;
+
+	alert(`First Name: ${firstName} Last Name: ${lastName} Phone Number: ${phoneNumber} Email ID: ${emailId}`);
+});
 </script>
 
 </body>
-
 </html>
